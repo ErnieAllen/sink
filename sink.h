@@ -35,7 +35,7 @@ public:
     explicit Sink(QObject *parent = 0);
 
     void cancel();
-    void createQueue(qpid::messaging::Session& session, const QString &name, QueueType qType);
+    void createQueue(qpid::messaging::Session& session, const QString &name, const char * args = 0);
 
 protected:
     void run();

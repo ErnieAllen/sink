@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-TARGET = sink
+TARGET = qpid-xsink
 TEMPLATE = app
 
 
@@ -19,7 +19,10 @@ SOURCES += main.cpp\
     dialogobjects.cpp \
     object-details.cpp \
     object-model.cpp \
-    sink.cpp
+    sink.cpp \
+    whatsthisbutton.cpp \
+    dialogdeclareoptions.cpp \
+    optiontextedit.cpp
 
 HEADERS  += mainwindow.h \
     sinkcomponent.h \
@@ -29,15 +32,32 @@ HEADERS  += mainwindow.h \
     object-details.h \
     object-model.h \
     msg_tool.h \
-    sink.h
+    sink.h \
+    whatsthisbutton.h \
+    dialogdeclareoptions.h \
+    optiontextedit.h
 
 FORMS    += mainwindow.ui \
     sinkcomponent.ui \
     dialogopen.ui \
-    dialogobjects.ui
+    dialogobjects.ui \
+    dialogdeclarequeue.ui \
+    dialogdeclareoptions.ui
 
 RESOURCES += \
     sink.qrc
 
 OTHER_FILES += \
     license.txt
+
+
+
+
+
+
+
+
+
+
+
+

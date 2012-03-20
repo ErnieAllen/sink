@@ -30,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //
     QCoreApplication::setOrganizationName("Red Hat");
     QCoreApplication::setOrganizationDomain("redhat.com");
-    QCoreApplication::setApplicationName("Sink");
+    QCoreApplication::setApplicationName("qpid-xsink");
 
     // allow qmf types to be passed in signals
     qRegisterMetaType<qmf::Data>();
@@ -86,6 +86,15 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionOpen_URL, SIGNAL(triggered()), openDialog, SLOT(show()));
     // when the dialog is accepted, open the URL
     connect(openDialog, SIGNAL(dialogOpenAccepted(QString,QString,QString)), qmf, SLOT(connect_url(QString,QString,QString)));
+
+    /*
+    declareQueueDialog = new DialogDeclareQueue(this);
+    connect(ui->action_Declare_new_queue, SIGNAL(triggered()), declareQueueDialog, SLOT(show()));
+    connect(declareQueueDialog, SIGNAL(dialogDeclareQueueAccept()), this, SLOT(declareQueue()));
+*/
+    declareOptionsDialog = new DialogDeclareOptions(this);
+    connect(ui->action_Declare_new_queue, SIGNAL(triggered()), declareOptionsDialog, SLOT(show()));
+    connect(declareOptionsDialog, SIGNAL(dialogDeclareOptionsAccept()), this, SLOT(declareQueue()));
 
     ui->centralWidget->setEnabled(false);
     ui->mainToolBar->setEnabled(false);
@@ -150,10 +159,33 @@ void MainWindow::setCurrentObject(const qmf::Data &q)
     emit initSink();
 }
 
+void MainWindow::setCurrentQueue(const QString& name)
+{
+    ui->centralWidget->setEnabled(true);
+    ui->labelQueue->setText(name);
+
+    emit stopTimer();
+    emit initSink();
+}
+
 void MainWindow::createQueue()
 {
     QString name = ui->labelQueue->text();
-    sink->createQueue(qmf->session(), name, priorityQueue);
+    sink->createQueue(qmf->session(), name);
+}
+
+// SLOT: Triggered when the declare new queue dialog is accepted.
+// Creates a new queue with the arguments on the dialog box
+void MainWindow::declareQueue()
+{
+
+    // get the queue name, this has already been vetted
+    QString name = declareOptionsDialog->name();
+
+    // declare the queue
+    sink->createQueue(qmf->session(), name, declareOptionsDialog->args().toStdString().c_str());
+    setCurrentQueue(name);
+
 }
 
 MainWindow::~MainWindow()

@@ -19,6 +19,7 @@
 
 #include "dialogobjects.h"
 #include "ui_dialogobjects.h"
+#include <QDebug>
 
 DialogObjects::DialogObjects(QWidget *parent, const std::string& name) :
     QDialog(parent),

@@ -25,6 +25,7 @@
 #include "sink.h"
 #include "dialogopen.h"
 #include "dialogobjects.h"
+#include "dialogdeclareoptions.h"
 
 namespace Ui {
     class MainWindow;
@@ -46,10 +47,12 @@ private:
     QLabel *label_connection_prompt;
     QLabel *label_connection_status;
 
-    DialogOpen*      openDialog;
-    DialogObjects*   queuesDialog;
+    DialogOpen*         openDialog;
+    DialogObjects*      queuesDialog;
+    DialogDeclareOptions* declareOptionsDialog;
 
     void setupStatusBar();
+    void setCurrentQueue(const QString& name);
 
 signals:
     void stopTimer();
@@ -60,6 +63,7 @@ private slots:
     void queryQueues();
     void setCurrentObject(const qmf::Data &queue);
     void createQueue();
+    void declareQueue();
 
 };
 

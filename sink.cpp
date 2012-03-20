@@ -51,13 +51,13 @@ void Sink::drain(int count)
     cond.wakeOne();
 }
 
-void Sink::createQueue(qpid::messaging::Session& session, const QString &name, QueueType qType)
+void Sink::createQueue(qpid::messaging::Session& session, const QString &name, const char *args)
 {
     QMutexLocker locker(&lock);
     if (msg_tool_q)
         delete msg_tool_q;
 
-    msg_tool_q = new msg_tool_queue ( session, name.toStdString().c_str(), qType );
+    msg_tool_q = new msg_tool_queue ( session, name.toStdString().c_str(), args );
     cond.wakeOne();
 }
 

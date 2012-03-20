@@ -61,7 +61,7 @@ struct msg_tool_queue
 
   msg_tool_queue ( Session & _session,
                    char const * _queue_name,
-                   QueueType  queueType
+                   char const * arguments
                  );
 };
 
