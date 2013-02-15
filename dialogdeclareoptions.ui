@@ -95,7 +95,7 @@ font-weight: bold;</string>
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-1111</y>
+        <y>-991</y>
         <width>597</width>
         <height>1471</height>
        </rect>
@@ -432,7 +432,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The maximum number of messages that a queue can contain before the action dictated by the policy_type is taken.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The maximum byte size of message data that a queue can contain before the action dictated by the policy_type is taken.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
          <widget class="QLineEdit" name="max_size">
@@ -440,12 +440,12 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>140</x>
             <y>0</y>
-            <width>76</width>
+            <width>116</width>
             <height>31</height>
            </rect>
           </property>
           <property name="maxLength">
-           <number>5</number>
+           <number>12</number>
           </property>
          </widget>
          <widget class="QLabel" name="label_4">
@@ -1456,7 +1456,7 @@ p, li { white-space: pre-wrap; }
           </size>
          </property>
          <property name="statusTip">
-          <string>poicy_type</string>
+          <string>policy_type</string>
          </property>
          <property name="title">
           <string/>
@@ -1759,9 +1759,9 @@ p, li { white-space: pre-wrap; }
           <property name="geometry">
            <rect>
             <x>20</x>
-            <y>25</y>
+            <y>26</y>
             <width>541</width>
-            <height>51</height>
+            <height>50</height>
            </rect>
           </property>
           <property name="minimumSize">
@@ -1807,7 +1807,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The maximum byte size of message data that a queue can contain before the action dictated by the policy_type is taken.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The maximum number of messages that a queue can contain before the action dictated by the policy_type is taken.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
          <widget class="QLineEdit" name="max_count">
@@ -1815,12 +1815,12 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>150</x>
             <y>0</y>
-            <width>111</width>
+            <width>71</width>
             <height>31</height>
            </rect>
           </property>
           <property name="maxLength">
-           <number>12</number>
+           <number>5</number>
           </property>
          </widget>
          <widget class="QLabel" name="label_3">

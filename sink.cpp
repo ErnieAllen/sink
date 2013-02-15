@@ -111,12 +111,15 @@ void Sink::run()
 void Sink::send(int count)
 {
     stringstream ss;
+    ss.str("");
+    Message msg = Message( ss.str() );
+    msg.setContentType("text/plain");
     if (msg_tool_q) {
         for (int i=0; i<count; ++i) {
-            ss.str("");
-            ss << "Message " << msg_tool_q->sent_count;
             msg_tool_q->sent_count ++;
-            msg_tool_q->sender.send ( Message ( ss.str() ) );
+            ss << "Message " << msg_tool_q->sent_count;
+            msg.setContent(ss.str());
+            msg_tool_q->sender.send ( msg );
             QCoreApplication::processEvents();
         }
         emit spouted(msg_tool_q->sent_count);

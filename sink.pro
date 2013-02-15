@@ -41,14 +41,22 @@ FORMS    += mainwindow.ui \
     sinkcomponent.ui \
     dialogopen.ui \
     dialogobjects.ui \
-    dialogdeclarequeue.ui \
     dialogdeclareoptions.ui
 
 RESOURCES += \
     sink.qrc
 
 OTHER_FILES += \
-    license.txt
+    license.txt \
+    CMakeLists.txt \
+    README.txt \
+    qpid-xsink.spec \
+    qpid-xsink.desktop
+
+
+
+
+
 
 
 

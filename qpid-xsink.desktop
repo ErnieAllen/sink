@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Qpid Sink
+GenericName=Qpid spout and drain
+Comment=Send and reveives messages for a qpid broker
+Exec=qpid-gsink
+Icon=qpid-xsink
+Terminal=false
+Type=Application
+Categories=Utility;Qt;
+StartupNotify=false

@@ -134,7 +134,7 @@
   </action>
   <action name="action_Declare_new_queue">
    <property name="text">
-    <string>&amp;Declare new queue</string>
+    <string>&amp;Declare a new queue</string>
    </property>
   </action>
   <action name="action_Start_sending_messages">
